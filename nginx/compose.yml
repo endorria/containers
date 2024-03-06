@@ -1,0 +1,20 @@
+services:
+  nginx:
+    container_name: nginx
+    hostname: nginx
+    image: nginx:alpine3.18
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+      - ./nglogs/:/etc/nginx/nglogs/
+      - ./widgets/:/usr/share/nginx/html/widgets
+    ports:
+      - "80:80"
+    restart: always
+  tomcat:
+    container_name: tomcat
+    hostname: tomcat
+    image: tomcat:latest 
+    volumes:
+      - ./logs/:/usr/local/tomcat/logs/
+      - ./tom/:/usr/local/tomcat/webapps/tom/
+    restart: always
