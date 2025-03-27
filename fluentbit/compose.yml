@@ -1,0 +1,10 @@
+services:
+  fluentbit:
+    container_name: fluentbit
+    image: cr.fluentbit.io/fluent/fluent-bit:3.0.6
+    volumes:
+      - ./fluentbit.conf:/fluent-bit/etc/fluent-bit.conf
+      - ./parsers.conf:/fluent-bit/etc/parsers.conf
+    ports:
+      - "3164:3164/udp"
+      - "5424:5424/udp"
