@@ -1,3 +1,8 @@
 widgets/
 logs/
 nglogs/
+*.pfx
+gsdata
+gsgwc
+certs
+.env
